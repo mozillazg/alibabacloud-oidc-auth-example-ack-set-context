@@ -21,8 +21,7 @@ jobs:
           oidc-provider-arn: '${{ secrets.ALIBABA_CLOUD_RAM_OIDC_ARN }}'
           set-outputs: 'true'
 
-      # https://github.com/mozillazg/ack-set-context/tree/support-sts-token-update-dist
-      - uses: mozillazg/ack-set-context@support-sts-token-update-dist
+      - uses: aliyun/ack-set-context@v1
         with:
           access-key-id: ${{ steps.get-credentials.outputs.access-key-id }}
           access-key-secret: ${{ steps.get-credentials.outputs.access-key-secret }}
