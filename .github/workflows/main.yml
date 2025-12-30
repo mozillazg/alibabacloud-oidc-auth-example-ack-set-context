@@ -22,6 +22,8 @@ jobs:
           set-outputs: 'true'
 
       - uses: mozillazg/ack-set-context@support-internal
+        env:
+          DEBUG: 'httpx:header'
         with:
           access-key-id: ${{ steps.get-credentials.outputs.access-key-id }}
           access-key-secret: ${{ steps.get-credentials.outputs.access-key-secret }}
@@ -30,6 +32,8 @@ jobs:
 
 
       - uses: mozillazg/ack-set-context@support-internal
+        env:
+          DEBUG: 'httpx:header'
         with:
           access-key-id: ${{ steps.get-credentials.outputs.access-key-id }}
           access-key-secret: ${{ steps.get-credentials.outputs.access-key-secret }}
@@ -41,6 +45,8 @@ jobs:
 
       
       - uses: mozillazg/ack-set-context@support-internal
+        env:
+          DEBUG: 'httpx:header'
         with:
           access-key-id: ${{ steps.get-credentials.outputs.access-key-id }}
           access-key-secret: ${{ steps.get-credentials.outputs.access-key-secret }}
@@ -49,6 +55,8 @@ jobs:
           cluster-type: 'One'
       
       - uses: mozillazg/ack-set-context@support-internal
+        env:
+          DEBUG: 'httpx:header'
         with:
           access-key-id: ${{ steps.get-credentials.outputs.access-key-id }}
           access-key-secret: ${{ steps.get-credentials.outputs.access-key-secret }}
