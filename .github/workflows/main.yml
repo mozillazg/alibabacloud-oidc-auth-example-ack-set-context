@@ -21,9 +21,39 @@ jobs:
           oidc-provider-arn: '${{ secrets.ALIBABA_CLOUD_RAM_OIDC_ARN }}'
           set-outputs: 'true'
 
-      - uses: aliyun/ack-set-context@v1
+      - uses: mozillazg/ack-set-context@support-internal
         with:
           access-key-id: ${{ steps.get-credentials.outputs.access-key-id }}
           access-key-secret: ${{ steps.get-credentials.outputs.access-key-secret }}
           security-token: ${{ steps.get-credentials.outputs.security-token }}
           cluster-id: '${{ secrets.CLUSTER_ID }}'
+
+
+      - uses: mozillazg/ack-set-context@support-internal
+        with:
+          access-key-id: ${{ steps.get-credentials.outputs.access-key-id }}
+          access-key-secret: ${{ steps.get-credentials.outputs.access-key-secret }}
+          security-token: ${{ steps.get-credentials.outputs.security-token }}
+          cluster-id: '${{ secrets.CLUSTER_ID }}'
+          private-ip-address: 'true'
+          temporary-duration-minutes: '1024'
+          api-endpoint: 'https://cs.cn-hangzhou.aliyuncs.com'
+
+      
+      - uses: mozillazg/ack-set-context@support-internal
+        with:
+          access-key-id: ${{ steps.get-credentials.outputs.access-key-id }}
+          access-key-secret: ${{ steps.get-credentials.outputs.access-key-secret }}
+          security-token: ${{ steps.get-credentials.outputs.security-token }}
+          cluster-id: '${{ secrets.CLUSTER_ID_ONE }}'
+          cluster-type: 'One'
+      
+      - uses: mozillazg/ack-set-context@support-internal
+        with:
+          access-key-id: ${{ steps.get-credentials.outputs.access-key-id }}
+          access-key-secret: ${{ steps.get-credentials.outputs.access-key-secret }}
+          security-token: ${{ steps.get-credentials.outputs.security-token }}
+          cluster-id: '${{ secrets.CLUSTER_ID_ONE }}'
+          cluster-type: 'One'
+          private-ip-address: 'true'
+          api-endpoint: 'https://adcp.cn-beijing.aliyuncs.com'
