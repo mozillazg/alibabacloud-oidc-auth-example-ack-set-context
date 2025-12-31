@@ -21,7 +21,7 @@ jobs:
           oidc-provider-arn: '${{ secrets.ALIBABA_CLOUD_RAM_OIDC_ARN }}'
           set-outputs: 'true'
 
-      - uses: mozillazg/ack-set-context@support-internal-endpoint
+      - uses: aliyun/ack-set-context@v1.1.1
         env:
           DEBUG: 'httpx:header'
         with:
@@ -31,7 +31,7 @@ jobs:
           cluster-id: '${{ secrets.CLUSTER_ID }}'
 
 
-      - uses: mozillazg/ack-set-context@support-internal-endpoint
+      - uses: aliyun/ack-set-context@v1.1.1
         env:
           DEBUG: 'httpx:header'
         with:
@@ -43,7 +43,7 @@ jobs:
           api-endpoint: 'https://cs.cn-hangzhou.aliyuncs.com'
 
       
-      - uses: mozillazg/ack-set-context@support-internal-endpoint
+      - uses: aliyun/ack-set-context@v1.1.1
         env:
           DEBUG: 'httpx:header'
         with:
@@ -53,7 +53,7 @@ jobs:
           cluster-id: '${{ secrets.CLUSTER_ID_ONE }}'
           cluster-type: 'One'
       
-      - uses: mozillazg/ack-set-context@support-internal-endpoint
+      - uses: aliyun/ack-set-context@v1.1.1
         env:
           DEBUG: 'httpx:header'
         with:
